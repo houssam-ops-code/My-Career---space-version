@@ -1,0 +1,222 @@
+.project-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    cursor:pointer;
+    height:420px;
+    box-shadow:var(--shadow-md);
+}
+
+.project-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.project-overlay{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:85%;
+    padding:2rem;
+    display:flex;
+    align-items:flex-end;
+    background:linear-gradient(
+        to top,
+        rgba(15,23,42,.96),
+        rgba(15,23,42,.82),
+        transparent
+    );
+    transform:translateY(70%);
+    transition:.55s cubic-bezier(.22, 1, .36, 1);
+}
+
+.project-content{
+    width:100%;
+}
+
+.project-content h3{
+    font-size:2rem;
+    margin-bottom:1rem;
+    transform:translateY(40px);
+    opacity:0;
+    transition:.4s;
+}
+
+.project-content p{
+    color:var(--text-secondary);
+    margin-bottom:1.5rem;
+    transform:translateY(25px);
+    opacity:0;
+    transition:.5s;
+}
+
+.project-tech{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.7rem;
+    margin-bottom:1.5rem;
+    transform:translateY(25px);
+    opacity:0;
+    transition:.6s;
+}
+
+.project-tech span{
+    padding:.4rem .8rem;
+    border-radius:999px;
+    background:rgba(59,130,246,.2);
+    color:var(--primary-color);
+    font-size:.85rem;
+}
+
+.project-buttons{
+    display:flex;
+    gap:1rem;
+    transform:translateY(25px);
+    opacity:0;
+    transition:.7s;
+}
+
+.project-card:hover .project-image{
+    transform:scale(1.08);
+}
+
+.project-card:hover .project-overlay{
+    transform:translateY(0);
+}
+
+.project-card:hover h3,
+.project-card:hover p,
+.project-card:hover .project-tech,
+.project-card:hover .project-buttons{
+    transform:translateY(0);
+    opacity:1;
+}
+
+.project-content h3::after{
+    content:"";
+    display:block;
+    width:0;
+    height:3px;
+    margin-top:.5rem;
+    background:var(--primary-color);
+    transition:.4s;
+}
+
+.project-card:hover h3::after{
+    width:70px;
+}
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:2rem;
+    margin-top:3rem;
+}
+
+.skills-preview{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:2rem;
+    align-items: start;
+    margin-top:3rem;
+}
+
+.skill-category {
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background: var(--surface);
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-category:hover{
+    transform:translateY(-6px);
+    border-color:var(--primary);
+    box-shadow: 0 10px 30px rgba(88, 166, 255, 0.15);
+}
+
+.skill-category h3{
+    margin-bottom:1.5rem;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(175px,1fr));
+    gap:1rem;
+}
+
+.skill-badge{
+    display:flex;
+    align-items:center;
+    gap:.8rem;
+    padding:.9rem 1rem;
+    border-radius:14px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    transition:all .3s ease;
+    cursor:default;
+}
+
+.skill-badge:hover{
+    transform:translateY(-3px);
+    background:var(--primary);
+    color:white;
+}
+
+.skill-icon{
+    font-size:1.2rem;
+    color:var(--primary);
+    flex-shrink:0;
+}
+
+.skill-badge span{
+    font-size:.95rem;
+    font-weight:500;
+}
+
+.timeline{
+    margin-top:3rem;
+    position:relative;
+    padding-left:2rem;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:12px;
+    top:0;
+    width:2px;
+    height:100%;
+    background:var(--primary);
+}
+
+.timeline-item{
+    display:flex;
+    gap:1.5rem;
+    margin-bottom:3rem;
+    position:relative;
+}
+
+.timeline-dot{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--primary);
+    flex-shrink:0;
+    box-shadow:0 0 20px var(--primary);
+}
+
+.timeline-year{
+    color:var(--primary);
+    font-weight:700;
+}
+
