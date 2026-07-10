@@ -1,0 +1,17 @@
+.space-scene{
+
+    width:100vw;
+
+    height:100vh;
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    overflow:hidden;
+
+    background:#02030d;
+
+}
